@@ -1,4 +1,3 @@
 FROM ubuntu
-RUN apt-get update
-RUN apt-get install -y nginx
-CMD [“echo”,”Image created”]
+COPY target/dependency/jetty-runner*.jar dependency/jetty-runner.jar 
+CMD [“java” ,"jar" , "dependency/jetty-runner.jar"]
